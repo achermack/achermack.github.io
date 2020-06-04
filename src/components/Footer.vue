@@ -2,6 +2,7 @@
     <v-footer 
     app
     padless
+    absolute
     >
     <v-col class="py-4 text-center white--text" cols="12">
         <strong>Austin Chermack </strong> — {{ new Date().getFullYear() }}  

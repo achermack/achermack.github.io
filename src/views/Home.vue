@@ -1,7 +1,7 @@
 <template>
   <v-layout>
     <v-container>
-      home
+      content goes here
     </v-container>
   </v-layout>
 </template>
