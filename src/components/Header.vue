@@ -42,6 +42,7 @@
 <script>
 // import * as easings from "vuetify/es5/services/goto/easing-patterns";
 export default {
+
   data() {
     return {
       options: {
@@ -55,6 +56,5 @@ export default {
 };
 </script>
 <style>
-
 
 </style>
