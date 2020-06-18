@@ -22,6 +22,9 @@
                 outlined
                 class="title">
                 {{app.name}}</v-btn>
+                <v-flex mt-2>
+                  <v-chip small pill color="dark-grey" dark>{{app.role}}</v-chip>
+                </v-flex>
             </v-col>
         </v-row>
     </v-card-title>
@@ -63,7 +66,7 @@ export default {
   },
   methods: {
     logo(name) {
-      return require("../assets/" + name);
+      return require("@/assets/" + name);
     }
   }
 };
