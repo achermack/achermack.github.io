@@ -24,17 +24,25 @@
               <v-layout wrap>
                 <template v-for="(app, i) in apps">
                   <v-flex :key="i" xs12 sm6 md4>
-                    <p-portfolio-app :app="app" />
+                    <project :app="app" />
                   </v-flex>
                 </template>
               </v-layout>
             </v-flex>          
           </v-layout>
         </v-container>
-        <v-container id="Contact">
+        <v-container id="contact">
           <v-layout wrap>
-            <span class="display-1 font-weight-thin">Contact</span>
-            
+            <v-flex xs12>
+              <span class="display-1 font-weight-thin">Contact</span>
+            </v-flex> 
+            <v-flex xs3 mt-2>
+              <template v-for="(contact, i) in contactLinks">
+                <v-flex :key="i">
+                  <contact :contact="contact" />
+                </v-flex>
+              </template>
+            </v-flex>
           </v-layout>
         </v-container>
       </v-layout>
@@ -43,12 +51,14 @@
 
 <script>
 // @ is an alias to /src
-import PPortfolioApp from "@/components/PPortfolioApp.vue";
+import Project from "@/components/Project.vue";
+import Contact from "@/components/Contact.vue";
 
 export default {
   name: 'Home',
   components: {
-    PPortfolioApp
+    Project,
+    Contact
   },
  data() {
     return {
@@ -60,6 +70,7 @@ export default {
           name: "Portfolio Site",
           logo: "logo.png",
           link: "https://achermack.github.io",
+          role: "Maintainer",
 
           description:
             "I created this website to showcase some of my work as a Software Developer. This website is built using the Vue.js and Vuetify and leverages Travis CI and Github Pages for automatic building and deployment. Check out the Github Repository below!",
@@ -90,6 +101,36 @@ export default {
             icon: "mdi-github",
             link: "https://www.github.com/achermack"
           }
+        },
+        {
+          name: "WebService Consumer",
+          logo: "service-consumer.png",
+          link: "https://achermack.github.io",
+          role: "Maintainer",
+          description: "I created a C# library that interfaces with the SOAP web services of a computer database and inventory management system allowing you to make service calls with just two lines of code. The library is setup in a Gitlab repository that automatically builds the library into a nuget package, and then deploys to jFrog Artifactory repository.",
+          technologies: [
+            {
+              name: "C#",
+              icon: "mdi-dot-net",
+              link: "https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
+            },
+            {
+              name: "SOAP",
+              icon: "mdi-web",
+              link: "https://en.wikipedia.org/wiki/SOAP"
+            },
+            {
+              name: "Gitlab",
+              icon: "mdi-gitlab",
+              link: "https://gitlab.com"
+            },
+            {
+              name: "Artifactory",
+              icon: "mdi-package",
+              link: "https://jfrog.com/artifactory"
+            }
+          ],
+          code: {}
         }
       ],
       
