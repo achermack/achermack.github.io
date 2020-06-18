@@ -4,7 +4,7 @@
       absolute
       dark
       prominent
-      src="https://picsum.photos/1920/1080?random&blur"
+      src="@/assets/header.png"
       fade-img-on-scroll
       height="275px"
     >
@@ -20,7 +20,7 @@
             >About</v-btn>
             <v-btn
               :x-small="$vuetify.breakpoint.smAndDown"
-              @click="$vuetify.goTo('#portfolio', options )"
+              @click="$vuetify.goTo('#projects', options )"
               text
             >Projects</v-btn>
             <v-btn
@@ -46,8 +46,8 @@ export default {
   data() {
     return {
       options: {
-        duration: 300,
-        offset: 0,
+        duration: 500,
+        offset: -275,
         easing: "easeInOutCubic"
       }
 
