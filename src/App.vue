@@ -1,4 +1,5 @@
 <template>
+ 
   <v-app class="grey darken-4">
     <Header/>
 
@@ -25,3 +26,8 @@ export default {
   }),
 };
 </script>
+<style>
+body {
+  background-color: #131316;
+}
+</style>

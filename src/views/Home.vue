@@ -36,7 +36,7 @@
             <v-flex xs12>
               <span class="display-1 font-weight-thin">Contact</span>
             </v-flex> 
-            <v-flex xs3 mt-2>
+            <v-flex mt-2>
               <template v-for="(contact, i) in contactLinks">
                 <v-flex :key="i">
                   <contact :contact="contact" />
