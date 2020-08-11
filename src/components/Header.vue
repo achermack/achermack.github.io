@@ -32,8 +32,8 @@
         </v-layout>
       </v-container>
       <v-container>
-          <v-row style="font-size: 40px; text-shadow: 1px 1px 6px #000000"> > cherm.io</v-row>
-          <v-row style="font-size: 28px; text-shadow: 1px 1px 6px #000000">Austin Chermack's Official Portfolio</v-row>
+          <v-row style="font-size: 40; text-shadow: 1px 1px 6px #000000"> > cherm.io</v-row>
+          <v-row style="font-size: 28; text-shadow: 1px 1px 6px #000000">Austin Chermack's Official Portfolio</v-row>
       </v-container>
     </v-layout>
   </v-app-bar>

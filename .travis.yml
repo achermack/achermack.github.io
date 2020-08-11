@@ -12,5 +12,6 @@ deploy:
  github_token: $GITHUB_TOKEN
  local_dir: dist
  target_branch: master
+ fqdn: cherm.io
  on:
    branch: develop
