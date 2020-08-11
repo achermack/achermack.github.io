@@ -32,8 +32,20 @@
         </v-layout>
       </v-container>
       <v-container>
-          <v-row style="font-size: 40; text-shadow: 1px 1px 6px #000000"> > cherm.io</v-row>
-          <v-row style="font-size: 28; text-shadow: 1px 1px 6px #000000">Austin Chermack's Official Portfolio</v-row>
+        <vue-typer
+        :text='["> cherm.io"]'
+        :repeat='Infinity'
+        :shuffle='false'
+        initial-action='typing'
+        :pre-type-delay='70'
+        :type-delay='70'
+        :pre-erase-delay='6000'
+        :erase-delay='150'
+         erase-style='select-all'
+        :erase-on-complete='false'
+        caret-animation='smooth'
+        ></vue-typer>
+        <v-row style="font-size: 24px; text-shadow: 1px 1px 6px #000000">Austin Chermack's Official Portfolio</v-row>
       </v-container>
     </v-layout>
   </v-app-bar>
@@ -41,20 +53,31 @@
 
 <script>
 // import * as easings from "vuetify/es5/services/goto/easing-patterns";
-export default {
 
+
+export default {
+  
   data() {
     return {
       options: {
         duration: 500,
         offset: -275,
         easing: "easeInOutCubic"
-      }
+      },
 
     };
   }
+  
 };
+
 </script>
 <style>
-
+.vue-typer {
+  font-size: 40px; 
+  
+}
+.vue-typer .custom.char {
+  color: white;
+  text-shadow: 1px 1px 6px #000000;
+}
 </style>
