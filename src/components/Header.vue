@@ -45,7 +45,7 @@
         :erase-on-complete='false'
         caret-animation='smooth'
         ></vue-typer>
-        <v-row style="font-size: 24px; text-shadow: 1px 1px 6px #000000">Austin Chermack's Official Portfolio</v-row>
+        <v-row style="font-size: 24px; text-shadow: 1px 1px 6px #000000">Austin Chermack » Software Developer</v-row>
       </v-container>
     </v-layout>
   </v-app-bar>
