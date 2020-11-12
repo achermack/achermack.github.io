@@ -53,9 +53,11 @@
 
 <script>
 // import * as easings from "vuetify/es5/services/goto/easing-patterns";
-
-
+import { VueTyper } from 'vue-typer'
 export default {
+  components: {
+      VueTyper
+  },
   
   data() {
     return {

@@ -192,8 +192,8 @@ export default {
   },
   methods: {
      embed(text, textLink) {
-      var a = document.createElement('a');
-      var link = document.createTextNode(text);
+      const a = document.createElement('a');
+      const link = document.createTextNode(text);
       a.appendChild(link);
       a.title(text);
       a.href = textLink;
