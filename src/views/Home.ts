@@ -30,7 +30,7 @@ interface ContactLink {
 })
 
 export default class Home extends Vue {
-    aboutText = "I'm a computer science student at the Univeristy of Wisconsin and enjoy writing software. Check out some of what I've worked on below!";
+    aboutText = "Hi, I'm Austin and I like to write code from time to time.";
     resumeLink = "https://github.com/achermack";
     apps: App[] = [
         {
