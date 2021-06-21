@@ -1,0 +1,39 @@
+{
+    "projects": [
+        {
+            "name": "My Portfolio",
+            "logo": "cherm_io.png",
+            "link": "https://cherm.io",
+            "role": "Maintainer",
+            "description": "VueJS + Vuetify + TypeScript progressive and reactive SPA built to showcase some of my development projects. The site is currently automatically built and deployed to Github Pages using Travis CI.",
+            "technologies": [
+                {
+                    "name": "Vue",
+                    "icon": "mdi-vuejs",
+                    "link": "https://vuejs.org"
+                },
+                {
+                    "name": "Vuetify",
+                    "icon": "mdi-vuetify",
+                    "link": "https://vuetifyjs.com/en/"
+                },
+                {
+                    "name": "Travis-CI",
+                    "icon": "mdi-wrench",
+                    "link": "https://travis-ci.org/"
+                },
+                {
+                    "name": "Github Pages",
+                    "icon": "mdi-github",
+                    "link": "https://pages.github.com"
+                }
+            ],
+            "code": {
+                "name": "Github",
+                "icon": "mdi-github",
+                "link": "https://www.github.com/achermack"
+            },
+            "active": false
+        }
+    ]
+}

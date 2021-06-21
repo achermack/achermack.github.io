@@ -1,0 +1,25 @@
+{
+    "contactLinks": [
+        {
+            "name": "Email",
+            "value": "austinchermack@gmail.com",
+            "link": "mailto:austinchermack@gmail.com",
+            "icon": "mdi-email",
+            "active": false
+        },
+        {
+            "name": "LinkedIn",
+            "value": "Austin Chermack",
+            "link": "https://www.linkedin.com/in/austin-chermack-964522187/",
+            "icon": "mdi-linkedin",
+            "active": false
+        },
+        {
+            "name": "Github",
+            "value": "achermack",
+            "link": "https://github.com/achermack/",
+            "icon": "mdi-github",
+            "active": false
+        }
+    ]
+}
