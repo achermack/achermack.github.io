@@ -1,10 +1,8 @@
 <template>
-  <v-flex >
-    <img :src="'https://i.gyazo.com/' + this.$props.imageId + '.png'" />
+  <v-flex>
+    <img :src="'https://i.gyazo.com/' + $props.imageId + '.png'" />
   </v-flex>
-
 </template>
-
 
 <script>
 export default {
@@ -16,7 +14,5 @@ export default {
       default: "test"
     }
   }
-}
-
-
+};
 </script>

@@ -14,14 +14,13 @@
 
 <script lang="ts">
 export default {
-    props: {
-        contact: {
-            type: Object,
-            default: function () {
-                return {};
-            }
-        }
+  props: {
+    contact: {
+      type: Object,
+      default: function() {
+        return {};
+      }
     }
-}
-
-</script> 
+  }
+};
+</script>

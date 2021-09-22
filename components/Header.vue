@@ -56,24 +56,24 @@
   </v-app-bar>
 </template>
 
-<script lang="ts"> 
+<script lang="ts">
 if (process.browser) {
-  var VueTyper = require('vue-typer').VueTyper
+  var VueTyper = require("vue-typer").VueTyper;
 }
 export default {
-      data() {
-        return {
-            options: {
-                duration: 500,
-                offset: -275,
-                easing: "easeInOutCubic",
-            },
-        };
-    },
-    components: {
-      VueTyper
-    }
-}
+  data() {
+    return {
+      options: {
+        duration: 500,
+        offset: -275,
+        easing: "easeInOutCubic"
+      }
+    };
+  },
+  components: {
+    VueTyper
+  }
+};
 </script>
 
 <style>

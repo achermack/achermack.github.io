@@ -52,21 +52,20 @@
   </v-card>
 </template>
 
-<script lang="ts"> 
+<script lang="ts">
 export default {
-      props: {
-        app: {
-            type: Object,
-            default: function () {
-                return {};
-            }
-        }
-    },
-    methods: {
-        logo(name: string) {
-            return "/" + name;
-        }
+  props: {
+    app: {
+      type: Object,
+      default: function() {
+        return {};
+      }
     }
-}
+  },
+  methods: {
+    logo(name: string) {
+      return "/" + name;
+    }
+  }
+};
 </script>
-
