@@ -10,7 +10,7 @@ jobs:
   include:
     - stage: build
       script:
-        - npm run build
+        - npm run generate
         - cd dist
         - cp index.html 404.html
       deploy:
