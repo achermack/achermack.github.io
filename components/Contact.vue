@@ -12,4 +12,16 @@
   </v-list-item>
 </template>
 
-<script src="./Contact.ts" lang="ts" /> 
+<script lang="ts">
+export default {
+    props: {
+        contact: {
+            type: Object,
+            default: function () {
+                return {};
+            }
+        }
+    }
+}
+
+</script> 

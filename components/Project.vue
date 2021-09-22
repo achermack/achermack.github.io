@@ -52,8 +52,21 @@
   </v-card>
 </template>
 
-<script src="./Project.ts" lang="ts" />
+<script lang="ts"> 
+export default {
+      props: {
+        app: {
+            type: Object,
+            default: function () {
+                return {};
+            }
+        }
+    },
+    methods: {
+        logo(name: string) {
+            return "/" + name;
+        }
+    }
+}
+</script>
 
-
-<style>
-</style>

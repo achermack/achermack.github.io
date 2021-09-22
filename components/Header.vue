@@ -4,7 +4,7 @@
     absolute
     dark
     prominent
-    src="@/assets/header.png"
+    src="/header.png"
     fade-img-on-scroll
     height="275px"
   >
@@ -56,7 +56,25 @@
   </v-app-bar>
 </template>
 
-<script src="./Header.ts" lang="ts" />
+<script lang="ts"> 
+if (process.browser) {
+  var VueTyper = require('vue-typer').VueTyper
+}
+export default {
+      data() {
+        return {
+            options: {
+                duration: 500,
+                offset: -275,
+                easing: "easeInOutCubic",
+            },
+        };
+    },
+    components: {
+      VueTyper
+    }
+}
+</script>
 
 <style>
 .vue-typer {
