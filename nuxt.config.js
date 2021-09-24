@@ -6,8 +6,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - nuxt-chermio',
-    title: 'nuxt-chermio',
+    titleTemplate: '%s - cherm.io',
+    title: 'Austin Chermack | Software Engineer',
     htmlAttrs: {
       lang: 'en'
     },
