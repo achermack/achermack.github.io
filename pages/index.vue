@@ -8,24 +8,36 @@
               <span
                 v-if="aboutMe"
                 class="display-1 font-weight-thin"
-              >About Me</span>
+              >Welcome to cherm.io</span>
             </transition>
           </v-flex>
           <v-flex xs12 mt-5>
             <transition name="projects-view">
-              <span
-                v-if="aboutMe"
-                class="title font-weight-light grey--text text--lighten-1"
-              >{{ aboutText }}</span>
+              <v-flex v-if="aboutMe" fluid>
+                <v-row class="mt-2 mb-2">
+                  <v-img
+                    v-for="shield in shields"
+                    :key="shield"
+                    :src="shield"
+                    max-height="50"
+                    max-width="100"
+                    class="ml-3"
+                  />
+                </v-row>
+                <span
+                  v-if="aboutMe"
+                  class="title font-weight-light grey--text text--lighten-1"
+                >{{ aboutText }}</span>
+              </v-flex>
             </transition>
           </v-flex>
           <v-flex mt-3>
             <transition name="projects-view">
-              <v-btn v-if="aboutMe" target="_blank" link :href="resumeLink">
+              <v-btn v-if="aboutMe" target="_blank" link :href="repoLink">
                 <v-icon left>
                   mdi-file
                 </v-icon>
-                My Resume
+                cherm.io Repository
               </v-btn>
             </transition>
           </v-flex>
@@ -35,7 +47,7 @@
         <v-layout wrap>
           <transition name="projects-view">
             <span
-              v-if="projects[0].active"
+              v-if="projects[0] != undefined && projects[0].active"
               class="display-1 font-weight-thin"
             >Projects</span>
           </transition>
@@ -57,7 +69,7 @@
           <v-flex xs12>
             <transition name="projects-view">
               <span
-                v-if="contactLinks[0].active"
+                v-if="contactLinks[0] != undefined && contactLinks[0].active"
                 class="display-1 font-weight-thin"
               >Contact</span>
             </transition>
@@ -81,15 +93,21 @@
 export default {
   data () {
     return {
-      aboutText: "Hi, I'm Austin and I like to write code from time to time.",
-      resumeLink: 'https://github.com/achermack',
+      aboutText:
+        "My name is Austin, and this is my personal portfolio website written in Nuxt + Vuetify + TypeScript & deployed to Github Pages with Travis CI. Depandabot and Codefactor are handled via Github Actions. Feel free to take a look at some of what I've worked on below.",
+      repoLink: 'https://github.com/achermack/achermack.github.iok',
       aboutMe: false,
       contactLinks: [],
-      projects: []
+      projects: [],
+      shields: [
+        'https://img.shields.io/github/package-json/v/achermack/achermack.github.io',
+        'https://travis-ci.com/achermack/achermack.github.io.svg?token=KSsakyxMzFprq5MSBDff&branch=develop',
+        'https://www.codefactor.io/repository/github/achermack/achermack.github.io/badge'
+      ]
     }
   },
   async fetch () {
-    const content = await this.$content('projects').fetch()
+    const content = await this.$content('index').fetch()
     this.projects = content.projects
     this.contactLinks = content.contactLinks
   },

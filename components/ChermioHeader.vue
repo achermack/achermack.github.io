@@ -3,6 +3,18 @@
     <v-row align="center" justify="center">
       <ChermioLogo />
     </v-row>
+    <v-row class="mt-0 mb-2" align="center" justify="center">
+      <v-btn
+        v-for="button in buttons"
+        :key="button.text"
+        depressed
+        plain
+        :to="button.page"
+      >
+        {{ button.text }}
+      </v-btn>
+    </v-row>
+
     <v-divider />
   </v-container>
 </template>
@@ -11,9 +23,8 @@ export default {
   data () {
     return {
       buttons: [
-        { text: 'About', page: '#about' },
-        { text: 'Projects', page: '#projects' },
-        { text: 'Contact', page: '#contact' }
+        { text: 'Home', page: '/' },
+        { text: 'Projects', page: '/projects' }
       ],
       options: {
         duration: 500,
