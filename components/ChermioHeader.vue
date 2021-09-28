@@ -6,7 +6,7 @@
     <v-row class="mt-0 mb-2" align="center" justify="center">
       <v-btn
         v-for="button in buttons"
-        :key="button"
+        :key="button.text"
         depressed
         plain
         :to="button.page"
