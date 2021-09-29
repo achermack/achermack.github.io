@@ -43,8 +43,8 @@ export default {
     '@nuxtjs/vuetify',
     ['@nuxtjs/eslint-module', {
       fix: true
-    }]
-
+    }],
+    '@nuxtjs/device',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

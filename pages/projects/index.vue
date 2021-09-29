@@ -17,13 +17,13 @@
           <v-card flat color="transparent" max-width="auto">
             <v-card-title>
               <v-row align="center" justify="center" dense>
-                <v-col cols="2">
+                <v-col cols="auto">
                   <v-card
                     :to="project.link"
                     elevation="5"
                     style="border-radius: 20px"
-                    width="250px"
-                    height="250px"
+                    max-width="250px"
+                    max-height="250px"
                   >
                     <v-img contain :src="`/${project.logo}`" />
                   </v-card>
@@ -33,7 +33,7 @@
                   <v-flex />
                   <v-flex mt-2>
                     <v-btn :to="project.link" text outlined>
-                      <span> Project Page </span>
+                      <span v-if="$device.isDesktop"> Project Page </span>
                       <v-icon class="mx-0 px-0 ml-1" small>
                         mdi-arrow-right-box
                       </v-icon>
@@ -45,7 +45,9 @@
                       text
                       outlined
                     >
-                      {{ project.code.name }}
+                      <span v-if="$device.isDesktop">{{
+                        project.code.name
+                      }}</span>
                       <v-icon>{{ project.code.icon }}</v-icon>
                     </v-btn>
                   </v-flex>
@@ -61,14 +63,14 @@
               <div class="title mt-2 mb-2 font-weight-bold white--text">
                 Involved Technologies
               </div>
-              <v-row class="tech">
+              <v-row class="tech" wrap>
                 <template v-for="(tech, i) in project.technologies">
                   <v-flex :key="i" xs3>
                     <div class="tech">
                       <v-btn x-large icon :href="tech.link" target="_blank">
                         <v-icon>{{ tech.icon }}</v-icon>
                       </v-btn>
-                      <div class="caption">
+                      <div v-if="$device.isDesktop" class="caption">
                         {{ tech.name }}
                       </div>
                     </div>
@@ -96,12 +98,13 @@ export default {
     for (let i = 0; i < this.projects.length; i++) {
       this.panel.push(i)
     }
-  }
+  },
+  methods: {}
 }
 </script>
 <style>
 .tech {
   text-align: center;
-  max-width: 40%;
+  max-width: 50%;
 }
 </style>
