@@ -128,6 +128,15 @@ export default {
         i = i + 1
       })
     }, 1000)
+  },
+  beforeDestroy () {
+    this.aboutMe = false
+    this.projects.forEach((element) => {
+      element.active = false
+    })
+    this.contactLinks.forEach((element) => {
+      element.active = false
+    })
   }
 }
 </script>
