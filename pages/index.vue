@@ -71,17 +71,42 @@
               <span
                 v-if="contactLinks[0] != undefined && contactLinks[0].active"
                 class="display-1 font-weight-thin"
-              >Contact</span>
+              >Get in touch</span>
             </transition>
           </v-flex>
           <v-flex mt-2>
-            <template v-for="(contact, i) in contactLinks">
-              <v-flex :key="i">
-                <transition name="projects-view">
-                  <contact v-if="contact.active" :contact="contact" />
-                </transition>
-              </v-flex>
-            </template>
+            <v-expansion-panels v-model="panel" multiple>
+              <v-expansion-panel>
+                <v-expansion-panel-header>
+                  <h3 class="font-weight-thin">
+                    <v-icon>mdi-arrow-right</v-icon> Social Media
+                  </h3>
+                </v-expansion-panel-header>
+                <v-expansion-panel-content>
+                  <v-card class="pa-3" outlined ripple rounded>
+                    <template v-for="(contact, i) in contactLinks">
+                      <v-flex :key="i">
+                        <transition name="projects-view">
+                          <contact v-if="contact.active" :contact="contact" />
+                        </transition>
+                      </v-flex>
+                    </template>
+                  </v-card>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+              <v-expansion-panel>
+                <v-expansion-panel-header>
+                  <h3 class="font-weight-thin mb-2">
+                    <v-icon>mdi-arrow-right</v-icon> Send me a message
+                  </h3>
+                </v-expansion-panel-header>
+                <v-expansion-panel-content>
+                  <v-card class="pa-3 mt-2" outlined ripple rounded>
+                    <ContactForm />
+                  </v-card>
+                </v-expansion-panel-content>
+              </v-expansion-panel>
+            </v-expansion-panels>
           </v-flex>
         </v-layout>
       </v-container>
@@ -103,7 +128,8 @@ export default {
         'https://img.shields.io/github/package-json/v/achermack/achermack.github.io',
         'https://travis-ci.com/achermack/achermack.github.io.svg?token=KSsakyxMzFprq5MSBDff&branch=develop',
         'https://www.codefactor.io/repository/github/achermack/achermack.github.io/badge'
-      ]
+      ],
+      panel: [0]
     }
   },
   async fetch () {
