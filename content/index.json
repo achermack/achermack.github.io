@@ -103,13 +103,6 @@
   ],
   "contactLinks": [
     {
-      "name": "Email",
-      "value": "austinchermack@gmail.com",
-      "link": "mailto:austinchermack@gmail.com",
-      "icon": "mdi-email",
-      "active": false
-    },
-    {
       "name": "LinkedIn",
       "value": "Austin Chermack",
       "link": "https://www.linkedin.com/in/austin-chermack-964522187/",
