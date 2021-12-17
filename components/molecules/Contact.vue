@@ -17,10 +17,10 @@ export default {
   props: {
     contact: {
       type: Object,
-      default: function() {
-        return {};
+      default () {
+        return {}
       }
     }
   }
-};
+}
 </script>

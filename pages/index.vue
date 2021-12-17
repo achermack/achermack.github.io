@@ -71,17 +71,18 @@
               <span
                 v-if="contactLinks[0] != undefined && contactLinks[0].active"
                 class="display-1 font-weight-thin"
-              >Contact</span>
+              >Get in touch</span>
             </transition>
           </v-flex>
           <v-flex mt-2>
-            <template v-for="(contact, i) in contactLinks">
-              <v-flex :key="i">
-                <transition name="projects-view">
-                  <contact v-if="contact.active" :contact="contact" />
-                </transition>
-              </v-flex>
-            </template>
+            <transition name="projects-view">
+              <ContactExpansionPanels
+                v-if="
+                  contactLinks[0] != null && contactLinks[0].active === true
+                "
+                :contact-links="contactLinks"
+              />
+            </transition>
           </v-flex>
         </v-layout>
       </v-container>
@@ -103,7 +104,8 @@ export default {
         'https://img.shields.io/github/package-json/v/achermack/achermack.github.io',
         'https://travis-ci.com/achermack/achermack.github.io.svg?token=KSsakyxMzFprq5MSBDff&branch=develop',
         'https://www.codefactor.io/repository/github/achermack/achermack.github.io/badge'
-      ]
+      ],
+      panel: [0]
     }
   },
   async fetch () {

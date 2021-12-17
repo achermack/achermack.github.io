@@ -33,7 +33,14 @@ export default {
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
-  components: true,
+  components: {
+    dirs: [
+      '~/components/atoms',
+      '~/components/molecules',
+      '~/components/organisms',
+      '~/components/templates',
+    ]
+  },
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -50,8 +57,14 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/content
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/toast',
+    '@nuxtjs/axios',
   ],
+  toast: {
+    position: 'bottom-right',
+    duration: 5000,
+  },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},
