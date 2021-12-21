@@ -76,6 +76,15 @@
           </v-flex>
           <v-flex mt-2>
             <transition name="projects-view">
+              <ContactLinkHover
+                v-if="
+                  contactLinks[0] != null && contactLinks[0].active === true
+                "
+                :contact-links="contactLinks"
+              />
+            </transition>
+
+            <transition name="projects-view">
               <ContactExpansionPanels
                 v-if="
                   contactLinks[0] != null && contactLinks[0].active === true

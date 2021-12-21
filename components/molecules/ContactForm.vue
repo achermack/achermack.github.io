@@ -31,41 +31,41 @@
   </v-form>
 </template>
 <script lang="ts">
-import { send } from 'emailjs-com'
+import { send } from "emailjs-com";
 
 export default {
-  data () {
+  data() {
     return {
       valid: true,
-      name: '',
-      text: '',
-      from: ''
-    }
+      name: "",
+      text: "",
+      from: ""
+    };
   },
   methods: {
-    sendEmail () {
-      this.$toast.show('Sending message...')
+    sendEmail() {
+      this.$toast.show("Sending message...");
       const templateParams = {
         from_name: this.from,
-        to_name: 'Austin',
+        to_name: "Austin",
         reply_to: this.from,
         message: this.text
-      }
+      };
       send(
-        'service_eoj55fj',
-        'template_3lyd0go',
+        "service_eoj55fj",
+        "template_3lyd0go",
         templateParams,
-        'user_cbWeUwNRWaV6vY4lbF7g9'
+        "user_cbWeUwNRWaV6vY4lbF7g9"
       ).then(
         () => {
-          this.$toast.show('Message sent!')
-          this.name = this.text = this.from = ''
+          this.$toast.show("Message sent!");
+          this.name = this.text = this.from = "";
         },
         () => {
-          this.$toast.show('Error sending message!')
+          this.$toast.show("Error sending message!");
         }
-      )
+      );
     }
   }
-}
+};
 </script>

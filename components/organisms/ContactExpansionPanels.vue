@@ -1,23 +1,5 @@
 <template>
-  <v-expansion-panels v-model="panel" multiple>
-    <v-expansion-panel>
-      <v-expansion-panel-header>
-        <h3 class="font-weight-thin">
-          <v-icon>mdi-account</v-icon> Social Media
-        </h3>
-      </v-expansion-panel-header>
-      <v-expansion-panel-content>
-        <v-card class="pa-3" outlined ripple rounded draggable>
-          <template v-for="(contact, i) in contactLinks">
-            <v-layout :key="i">
-              <transition name="projects-view">
-                <ContactLink v-if="contact.active" :contact="contact" />
-              </transition>
-            </v-layout>
-          </template>
-        </v-card>
-      </v-expansion-panel-content>
-    </v-expansion-panel>
+  <v-expansion-panels v-model="panel">
     <v-expansion-panel>
       <v-expansion-panel-header>
         <h3 class="font-weight-thin mb-2">
