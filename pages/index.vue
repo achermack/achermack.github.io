@@ -74,7 +74,7 @@
               >Get in touch</span>
             </transition>
           </v-flex>
-          <v-flex mt-2>
+          <v-flex mt-3>
             <transition name="projects-view">
               <ContactLinkHover
                 v-if="

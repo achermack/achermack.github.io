@@ -1,31 +1,36 @@
 <template>
-  <v-hover v-slot="{ hover }" class="mb-3">
-    <v-row>
-      <v-btn plain @click="enable">
-        <v-icon :class="activeColor">
-          {{ enabled ? "mdi-check" : "mdi-account-plus" }}
-        </v-icon>
-        Social media
-      </v-btn>
+  <kinesis-container>
+    <v-hover v-slot="{ hover }" class="mb-3">
+      <v-row>
+        <v-btn plain @click="enable">
+          <v-icon :class="activeColor">
+            {{ enabled ? "mdi-check" : "mdi-account-plus" }}
+          </v-icon>
+          Social media
+        </v-btn>
 
-      <transition name="projects-view" mode="out-in">
-        <v-col v-if="hover || enabled" class="ma-0 pa-0">
-          <v-layout>
-            <v-btn
-              v-for="contactLink in contactLinks"
-              :key="contactLink"
-              target="_blank"
-              plain
-              :href="contactLink.link"
-            >
-              <v-icon>{{ contactLink.icon }} </v-icon>
-              {{ contactLink.name }}
-            </v-btn>
-          </v-layout>
-        </v-col>
-      </transition>
-    </v-row>
-  </v-hover>
+        <transition name="projects-view" hide-on-leave>
+          <v-col v-if="hover || enabled" class="ma-0 pa-0">
+            <v-layout>
+              <kinesis-element
+                v-for="(contactLink, i) in contactLinks"
+                :key="contactLink"
+                type="translate"
+                axis="x"
+                origin-x="0"
+                :strength="25 * (i + 1)"
+              >
+                <v-btn target="_blank" plain :href="contactLink.link">
+                  <v-icon>{{ contactLink.icon }} </v-icon>
+                  {{ contactLink.name }}
+                </v-btn>
+              </kinesis-element>
+            </v-layout>
+          </v-col>
+        </transition>
+      </v-row>
+    </v-hover>
+  </kinesis-container>
 </template>
 <script>
 export default {
@@ -59,7 +64,7 @@ export default {
 .projects-view-enter,
 .projects-view-leave-to {
   opacity: 0;
-  transform: translateX(-100px);
+  transform: translateX(-25px);
 }
 
 .projects-view-enter-to,
