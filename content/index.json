@@ -38,7 +38,7 @@
     },
     {
       "name": "ABaN",
-      "logo": "header.png",
+      "logo": "aban.svg",
       "link": "https://cherm.io",
       "role": "Maintainer",
       "projectPageDescription": "Hello World!",
@@ -66,6 +66,32 @@
         }
       ],
       "code": {},
+      "active": false
+    },
+    {
+      "name": "netfetch",
+      "logo": "netfetch.svg",
+      "link": "https://github.com/achermack/netfetch",
+      "role": "Maintainer",
+      "projectPageDescription": "Hello World!",
+      "description": "A simple cross-platform system information CLI tool written in dotnet 6 using System.CommandLine, similiar to neofetch",
+      "technologies": [
+        {
+          "name": "dotnet",
+          "icon": "mdi-dot-net",
+          "link": "https://www.microsoft.com/net/"
+        },
+        {
+          "name": "GitHub",
+          "icon": "mdi-github",
+          "link": "https://www.github.com/"
+        }
+      ],
+      "code": {
+        "name": "GitHub",
+        "icon": "mdi-github",
+        "link": "https://www.github.com/achermack"
+      },
       "active": false
     }
   ],

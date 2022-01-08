@@ -24,9 +24,13 @@
         outlined
         label="Message"
       />
-      <v-btn @click="sendEmail">
+      <v-btn class="transparent" :disabled="sending" @click="sendEmail">
+        <v-icon class="mr-2">
+          mdi-send
+        </v-icon>
         Send
       </v-btn>
+      <v-progress-linear v-if="sending" class="mt-2" indeterminate />
     </v-col>
   </v-form>
 </template>
@@ -39,11 +43,22 @@ export default {
       valid: true,
       name: "",
       text: "",
-      from: ""
+      from: "",
+      sending: false
     };
   },
   methods: {
     sendEmail() {
+      this.sending = true;
+      if (process.env.NODE_ENV === "development") {
+        // wait for 5 seconds
+        this.$toast.show("Sending email");
+        setTimeout(() => {
+          this.sending = false;
+          this.$toast.show("sent");
+        }, 1000);
+        return;
+      }
       this.$toast.show("Sending message...");
       const templateParams = {
         from_name: this.from,
@@ -59,10 +74,12 @@ export default {
       ).then(
         () => {
           this.$toast.show("Message sent!");
+          this.sending = false;
           this.name = this.text = this.from = "";
         },
         () => {
           this.$toast.show("Error sending message!");
+          this.sending = false;
         }
       );
     }

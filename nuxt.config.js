@@ -48,9 +48,6 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    ['@nuxtjs/eslint-module', {
-      fix: true
-    }],
     '@nuxtjs/device',
   ],
 
@@ -76,7 +73,7 @@ export default {
       dark: true,
       themes: {
         dark: {
-          primary: colors.blue.darken2,
+          primary: colors.cyan.lighten3,
           accent: colors.grey.darken3,
           secondary: colors.amber.darken3,
           info: colors.teal.lighten1,

@@ -4,18 +4,13 @@
       <ChermioLogo />
     </v-row>
     <v-row class="mt-0 mb-2" align="center" justify="center">
-      <v-btn
-        v-for="button in buttons"
-        :key="button.text"
-        depressed
-        plain
-        :to="button.page"
-      >
-        {{ button.text }}
-      </v-btn>
+      <v-tabs centered background-color="transparent">
+        <v-tabs-slider color="primary" />
+        <v-tab v-for="button in buttons" :key="button.text" :to="button.page">
+          {{ button.text }}
+        </v-tab>
+      </v-tabs>
     </v-row>
-
-    <v-divider />
   </v-container>
 </template>
 <script>

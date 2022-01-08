@@ -12,5 +12,5 @@
 
 </center>
 
-This repository is home to the source code of cherm.io, my personal website. It's a nuxt/vuetify/typescript application using nuxt generator to serve a static deployment on Github pages. The build and deployment is handled in TravisCI, while Dependabot and Codefactor run on Github Actions
+This repository is home to the source code of [cherm.io](https://cherm.io), my personal website. It's a nuxt/vuetify/typescript application using nuxt generator to serve a static deployment on Github pages. The build and deployment is handled in TravisCI, while Dependabot and Codefactor run on Github Actions
 
