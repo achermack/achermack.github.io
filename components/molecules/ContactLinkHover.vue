@@ -6,7 +6,7 @@
           <v-icon :class="activeColor">
             {{ enabled ? "mdi-check" : "mdi-account-plus" }}
           </v-icon>
-          Social media
+          Show Social Links
         </v-btn>
 
         <transition name="projects-view" hide-on-leave>
@@ -37,24 +37,24 @@ export default {
   props: {
     contactLinks: {
       type: Array,
-      default () {
-        return []
+      default() {
+        return [];
       }
     }
   },
-  data () {
+  data() {
     return {
       enabled: false,
-      activeColor: 'white--text'
-    }
+      activeColor: "white--text"
+    };
   },
   methods: {
-    enable () {
-      this.enabled = !this.enabled
-      this.activeColor = this.enabled ? 'success--text' : 'white--text'
+    enable() {
+      this.enabled = !this.enabled;
+      this.activeColor = this.enabled ? "success--text" : "white--text";
     }
   }
-}
+};
 </script>
 <style scoped>
 .projects-view-enter-active,

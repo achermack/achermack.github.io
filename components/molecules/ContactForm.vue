@@ -24,7 +24,12 @@
         outlined
         label="Message"
       />
-      <v-btn class="transparent" :disabled="sending" @click="sendEmail">
+      <v-btn
+        color="success"
+        class="transparent"
+        :disabled="sending"
+        @click="sendEmail"
+      >
         <v-icon class="mr-2">
           mdi-send
         </v-icon>

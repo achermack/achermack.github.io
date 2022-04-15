@@ -1,155 +1,61 @@
 <template>
-  <v-container id="home">
-    <v-layout wrap>
-      <v-container id="about">
-        <v-layout wrap>
-          <v-flex>
-            <transition name="projects-view">
-              <span
-                v-if="aboutMe"
-                class="display-1 font-weight-thin"
-              >Welcome to cherm.io</span>
-            </transition>
-          </v-flex>
-          <v-flex xs12 mt-5>
-            <transition name="projects-view">
-              <v-flex v-if="aboutMe" fluid>
-                <v-row class="mt-2 mb-2">
-                  <v-img
-                    v-for="shield in shields"
-                    :key="shield"
-                    :src="shield"
-                    max-height="50"
-                    max-width="100"
-                    class="ml-3"
-                  />
-                </v-row>
-                <span
-                  v-if="aboutMe"
-                  class="title font-weight-light grey--text text--lighten-1"
-                >{{ aboutText }}</span>
-              </v-flex>
-            </transition>
-          </v-flex>
-          <v-flex mt-3>
-            <transition name="projects-view">
-              <v-btn v-if="aboutMe" target="_blank" link :href="repoLink">
-                <v-icon left>
-                  mdi-file
-                </v-icon>
-                cherm.io Repository
-              </v-btn>
-            </transition>
-          </v-flex>
-        </v-layout>
-      </v-container>
-      <v-container id="projects" mt-5>
-        <v-layout wrap>
-          <transition name="projects-view">
-            <span
-              v-if="projects[0] != undefined && projects[0].active"
-              class="display-1 font-weight-thin"
-            >Projects</span>
-          </transition>
-          <v-flex xs12 class="mt-5">
-            <v-layout wrap>
-              <template v-for="(app, i) in projects">
-                <v-flex :key="i" xs12 sm6 md4>
-                  <transition name="projects-view">
-                    <project v-if="app.active" :app="app" />
-                  </transition>
-                </v-flex>
-              </template>
-            </v-layout>
-          </v-flex>
-        </v-layout>
-      </v-container>
-      <v-container id="contact">
-        <v-layout wrap>
-          <v-flex xs12>
-            <transition name="projects-view">
-              <span
-                v-if="contactLinks[0] != undefined && contactLinks[0].active"
-                class="display-1 font-weight-thin"
-              >Get in touch</span>
-            </transition>
-          </v-flex>
-          <v-flex mt-3>
-            <transition name="projects-view">
-              <ContactLinkHover
-                v-if="
-                  contactLinks[0] != null && contactLinks[0].active === true
-                "
-                :contact-links="contactLinks"
-              />
-            </transition>
-
-            <transition name="projects-view">
-              <ContactExpansionPanels
-                v-if="
-                  contactLinks[0] != null && contactLinks[0].active === true
-                "
-                :contact-links="contactLinks"
-              />
-            </transition>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-layout>
+  <v-container id="home" style="height: 100vh">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 2000">
+      <path
+        fill="#0099ff"
+        fill-opacity="1"
+        d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,261.3C672,256,768,224,864,213.3C960,203,1056,213,1152,218.7C1248,224,1344,224,1392,224L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+      ></path>
+    </svg>
   </v-container>
 </template>
 
 <script lang="ts">
 export default {
-  data () {
+  data() {
     return {
       aboutText:
         "My name is Austin, and this is my personal portfolio website written in Nuxt + Vuetify + TypeScript & deployed to Github Pages with Travis CI. Depandabot and Codefactor are handled via Github Actions. Feel free to take a look at some of what I've worked on below.",
-      repoLink: 'https://github.com/achermack/achermack.github.iok',
+      repoLink: "https://github.com/achermack/achermack.github.iok",
       aboutMe: false,
       contactLinks: [],
       projects: [],
-      shields: [
-        'https://img.shields.io/github/package-json/v/achermack/achermack.github.io',
-        'https://travis-ci.com/achermack/achermack.github.io.svg?token=KSsakyxMzFprq5MSBDff&branch=develop',
-        'https://www.codefactor.io/repository/github/achermack/achermack.github.io/badge'
-      ],
       panel: [0]
-    }
+    };
   },
-  async fetch () {
-    const content = await this.$content('index').fetch()
-    this.projects = content.projects
-    this.contactLinks = content.contactLinks
+  async fetch() {
+    const content = await this.$content("index").fetch();
+    this.projects = content.projects;
+    this.contactLinks = content.contactLinks;
   },
-  mounted () {
+  mounted() {
     // Cascade load projects
-    this.aboutMe = true
+    this.aboutMe = true;
     setTimeout(() => {
-      let i = 0
-      this.projects.forEach((element) => {
-        setTimeout(() => (element.active = true), i * 250)
-        i = i + 1
-      })
-    }, 500)
+      let i = 0;
+      this.projects.forEach(element => {
+        setTimeout(() => (element.active = true), i * 250);
+        i = i + 1;
+      });
+    }, 500);
     setTimeout(() => {
-      let i = 0
-      this.contactLinks.forEach((element) => {
-        setTimeout(() => (element.active = true), i * 100)
-        i = i + 1
-      })
-    }, 1000)
+      let i = 0;
+      this.contactLinks.forEach(element => {
+        setTimeout(() => (element.active = true), i * 100);
+        i = i + 1;
+      });
+    }, 1000);
   },
-  beforeDestroy () {
-    this.aboutMe = false
-    this.projects.forEach((element) => {
-      element.active = false
-    })
-    this.contactLinks.forEach((element) => {
-      element.active = false
-    })
+  beforeDestroy() {
+    this.aboutMe = false;
+    this.projects.forEach(element => {
+      element.active = false;
+    });
+    this.contactLinks.forEach(element => {
+      element.active = false;
+    });
   }
-}
+};
 </script>
 <style scoped>
 .projects-view-enter-active,

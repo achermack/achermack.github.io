@@ -7,7 +7,7 @@
         </h3>
       </v-expansion-panel-header>
       <v-expansion-panel-content>
-        <v-card class="pa-3 mt-2" outlined ripple rounded>
+        <v-card class="pa-3 mt-2" outlined rounded>
           <ContactForm />
         </v-card>
       </v-expansion-panel-content>
@@ -19,15 +19,15 @@ export default {
   props: {
     contactLinks: {
       type: Array,
-      default () {
-        return []
+      default() {
+        return [];
       }
     }
   },
-  data () {
+  data() {
     return {
       panel: [0]
-    }
+    };
   }
-}
+};
 </script>
