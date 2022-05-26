@@ -23,7 +23,7 @@
     "vuetify": "^2.6.4"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.16.5",
+    "@babel/eslint-parser": "^7.18.2",
     "@nuxt/types": "^2.15.7",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxtjs/device": "^2.1.0",
