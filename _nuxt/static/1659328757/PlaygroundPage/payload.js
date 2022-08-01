@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/PlaygroundPage", {data:[{}],fetch:{},mutations:void 0});
